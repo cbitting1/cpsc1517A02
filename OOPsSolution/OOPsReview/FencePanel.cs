@@ -12,8 +12,7 @@ namespace OOPsReview
     //class permissions must be public 
     public class FencePanel
     {
-        //Properties:
-        
+        //Properties: 
         // Property is associated with a single piece of data
         //Property has two sub components
         //      get: returns a value to the calling agent
@@ -25,7 +24,6 @@ namespace OOPsReview
 
 
         // Two ways to code a property: 
-
         // Auto-Implemented
         //  a private data member DOES NOT need to be coded
         //  the system will create an internal data member that 
@@ -109,6 +107,21 @@ namespace OOPsReview
             Style = style;
         }
 
+        //Behaviours
+        //a.k.a. a method
+        public double EstimatedNumberOfPanels(double linearlength)
+        {
+            //you could use either the property Width OR the private data member _Width
+            //using the property ensures all validation or excess logic is in play
+            double numberofpanels = linearlength / Width;  
+            return numberofpanels;
+        }
+
+        public double FenceArea (double linearlength)
+        {
+            //property Heights is auto implemented, there is no choice
+            return linearlength * Height;
+        }
 
 
 
