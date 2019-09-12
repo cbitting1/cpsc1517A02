@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPsReview
 {
-    class Gate
+    public class Gate
     {
         public double Height { get; set; }
         private string _Style;
@@ -31,7 +31,6 @@ namespace OOPsReview
             }
         }
 
-
         public double Width
         {
             get
@@ -46,18 +45,33 @@ namespace OOPsReview
                 }
                 else
                 {
-                    new Exception("Width can not be 0 or less than 0");
+                    new Exception("Width can not be 0 or less than 0.");
                 }
             }
         }
-
-        public double? Price { get; set; }
+        private double _Price;
+        public double Price
+        {
+            get
+            {
+                return _Price;
+            }
+            set
+            {
+                if (value > 0.0)
+                {
+                    _Price = value;
+                }
+                else
+                {
+                    new Exception("Price can not be 0 or less than 0.");
+                }
+            }
+        }
         public Gate()
         {
 
         }
-
-
         public Gate(double height, double width, string style, double price)
         {
             Height = height;
@@ -65,12 +79,11 @@ namespace OOPsReview
             Price = price;
             Style = style;
         }
-
-        public double GateArea(double linearlength)
+        public double GateArea()
         {
             //property Heights is auto implemented, there is no choice
             return Width * Height;
         }
     }
-
 }
+

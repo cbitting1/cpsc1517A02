@@ -8,7 +8,6 @@ namespace OOPsReview
 {
     public class Estimate
     {
-
         //
         public double TotalPrice { get; private set; }
         public double LinearLength { get; set; }
@@ -17,37 +16,29 @@ namespace OOPsReview
 
         public List<Gate> Gates { get; set; }
 
-
         public double CalculatePrice()
         {
-            //using properties of FencePanel 
+            //using properties of FencePanel
             double numberofpanels = Panel.EstimatedNumberOfPanels(LinearLength);
             if ((int)(numberofpanels * 10.0) > ((int)numberofpanels * 10))
             {
                 numberofpanels++;
             }
-
-            //summing calulated prices
+            //summing calculated prices
             if (Panel.Price == null)
             {
-                throw new Exception("Panel price is needed to create estimate.");
+                throw new Exception("Panel price is needed to create estimate");
             }
             else
             {
+
                 TotalPrice += numberofpanels * (double)Panel.Price;
-                foreach(var item in Gates)
+                foreach (var item in Gates)
                 {
                     TotalPrice += item.Price;
                 }
-
             }
-            //using properties of Gate
-            //TotalPrice = the calculated value in the method;
-
             return TotalPrice;
         }
-
-
-
     }
 }

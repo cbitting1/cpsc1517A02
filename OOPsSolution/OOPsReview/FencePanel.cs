@@ -7,38 +7,36 @@ using System.Threading.Tasks;
 namespace OOPsReview
 {
     //the default permissions is private
-    //if an outside user of this class wanted 
-    //access to the class contents; then the 
-    //class permissions must be public 
+    //if an outside user of this class wanted
+    //  access to the class contents; then the
+    //  class permissions must be public
     public class FencePanel
     {
-        //Properties: 
-        // Property is associated with a single piece of data
-        //Property has two sub components
-        //      get: returns a value to the calling agent
-        //      set: receives a value from the calling agent
-        //           the keyword use to represent the incoming data 
-        //           is value
-        // a property DOES NOT have a developer's parameter
+        //Properties
+        //property is associated with a single piece of data
+        //property has two sub components
+        //    get: returns a value to the calling agent
+        //    set: receives a value from the calling agent
+        //         the keyword use to represent the  incoming data
+        //         is value
+        //a property DOES NOT have a developer's parameter
 
-
-
-        // Two ways to code a property: 
-        // Auto-Implemented
+        //two ways to code a property
+        //Auto-Implemented
         //  a private data member DOES NOT need to be coded
-        //  the system will create an internal data member that 
-        //      the sytem will manage.
-
+        //  the system will create an internal data member that
+        //      the sytem will manage
         public double Height { get; set; }
         //public double Width { get; set; }
 
-        //Fully Implemented:
+        //Fully Implemented
         //  a private data member WILL be coded for use by this property
-        //  typically the incoming data needs additional processing 
-        //      such as validation.
-        //  Example: The characteristic is a string that can be null or 
-        //           requires at least one character (that is the string
-        //           can not be empty).
+        //  typically the incoming data needs additional processing
+        //     such as validation
+        //  Exaample: the characteristic is a string that can be null or
+        //            requires at least on character (that is the string
+        //            can not be empty)
+
         private string _Style;
         private double _Width;
 
@@ -61,7 +59,6 @@ namespace OOPsReview
             }
         }
 
-
         public double Width
         {
             get
@@ -72,33 +69,33 @@ namespace OOPsReview
             {
                 if (value <= 0.0)
                 {
-                    new Exception("Width can not be 0 or less than 0");
+                    new Exception("Width can not be 0 or less than 0.");
                 }
-                else 
+                else
                 {
                     _Width = value;
                 }
             }
         }
 
-        //Does a nullable non-string data value need a fully-implemented property?
-        // NO. A nullable numeric will either be given a numeric value OR null;
-        // However: if the numeric needs additional checking then you should '
-        //          consider using a fully-impleented property.
+        //Does a nullable non-string data value need a fully-Implemented
+        //    property?
+        //NO. a nullable numeric will either be given a numeric value OR null;
+        //However: if the numeric needs additional checking then you should
+        //         consider using a fully-implemented property
+        public double? Price { get; set; }
 
-        public double? Price { get; set; } //double? means is nullable
+        //Constructors
 
-
-        //Constructors 
-
-        // default
+        //default
         public FencePanel()
         {
 
         }
 
-        //greedy 
-        //list of parameters representing each possible data value in your class (properties)
+        //greedy
+        //list of parameters representing each possible data value in your
+        //   class (properties)
         public FencePanel(double height, double width, string style, double? price)
         {
             Height = height;
@@ -111,19 +108,18 @@ namespace OOPsReview
         //a.k.a. a method
         public double EstimatedNumberOfPanels(double linearlength)
         {
-            //you could use either the property Width OR the private data member _Width
-            //using the property ensures all validation or excess logic is in play
-            double numberofpanels = linearlength / Width;  
+            //you could use either the property Width OR the private data
+            //    member _Width
+            //Using the property ensures all validation or excess logic
+            //    is in play
+            double numberofpanels = linearlength / _Width;
             return numberofpanels;
         }
 
-        public double FenceArea (double linearlength)
+        public double FenceArea(double linearlength)
         {
             //property Heights is auto implemented, there is no choice
             return linearlength * Height;
         }
-
-
-
     }
 }
