@@ -93,8 +93,18 @@ namespace OOPsReview
             ClientEstimate.CalculatePrice();
 
             //output client information
-
-
+            Console.WriteLine("The fence is to be a " + ClientEstimate.Panel.Style + " style");
+            Console.WriteLine("The linear fence length required is {0:0.0}", ClientEstimate.LinearLength);
+            Console.WriteLine("Number of required panels {0}", 
+                ClientEstimate.Panel.EstimatedNumberOfPanels(ClientEstimate.LinearLength));
+            Console.WriteLine("Number of required gates {0}", ClientEstimate.Gates.Count);
+            double fenceArea = ClientEstimate.Panel.FenceArea(ClientEstimate.LinearLength);
+            foreach(var item in ClientEstimate.Gates)
+            {
+                fenceArea += item.GateArea();
+            }
+            Console.WriteLine(string.Format("Total fence surface area {0:0.00}", fenceArea * 2));
+            Console.ReadKey();  //required due to using just F5
 
 
         }
