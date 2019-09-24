@@ -9,12 +9,12 @@
 </head>
 <body>
     <div class="container-fluid">
-    <div class="jumbotron">
-        @RenderPage("~/_Menu.cshtml")
-        @RenderSection("banner")
-    </div>
-    @RenderBody()
-    @RenderSection("footer", required: false)
+        <div class="jumbotron">
+            @RenderPage("~/_Menu.cshtml")
+            @RenderSection("banner")
+        </div>
+        @RenderBody()
+        @RenderSection("footer", required: false)
     </div>
 </body>
 </html>

@@ -15,19 +15,19 @@
     <h1>Basic Form</h1>
 }
 
-<!--determine if the page is a postback or not-->
-@if(IsPost)
+<!-- determine if the page is a postback or not-->
+@if (IsPost)
 {
-    //this true path is done IF this page is returning 
-    //from the previous sending.
+    //this true path is done IF this page is returning
+    //from the previous sending
 
-    //IF you have multiple buttons on you r form, you SHOULD
-    //determine which button was pressed; thus; dictating WHICH 
+    //IF you have multiple buttons on your form, you SHOULD
+    //determine which button was pressed; thus; dictating WHICH
     //logic is to be EXECUTED
     if (thebutton.Equals("pressme"))
-            {
-        //the Press Me button was presses
-        if(string.IsNullOrEmpty(myname))
+    {
+        //the Press Me button was pressed
+        if (string.IsNullOrEmpty(myname))
         {
             <p>You should enter your name.</p>
         }
@@ -40,27 +40,23 @@
     {
         //the Clear button was pressed
         myname = "";
-        <p>You pressed the clear button</p>
+        <p>Use pressed the clear button</p>
     }
-
 }
 else
 {
-    // use to initialize items on your form BEFORE it is sent 
+    // use to initialize items on your form BEFORE it is sent
     // to the user for the FIRST time.
     <p>this is the first time on this page.</p>
 }
 
 
-    <form id="theform" method="post">
-        <label id="label1" for="dataentry">Enter your full name</label>&nbsp;&nbsp;
-        <input type="text" id="dataentry" name="dataentry"
-               value="@myname" />
-        <br /><br />
-        <button type="submit" id="PressMe" name="theButton" value="pressme">Press Me</button>
-        &nbsp;&nbsp;
-        <input type="submit" id="PressMe" name="theButton" value="Clear" />
-
-    </form>
-
-
+<form id="theform" method="post">
+    <label id="label1" for="dataentry">Enter your full name</label>&nbsp;&nbsp;
+    <input type="text" id="dataentry" name="dataentry"
+           value="@myname" />
+    <br /><br />
+    <button type="submit" id="PressMe" name="theButton" value="pressme">Press Me</button>
+    &nbsp;&nbsp;
+    <input type="submit" id="PressMe" name="theButton" value="Clear" />
+</form>
