@@ -1,40 +1,41 @@
 ﻿<nav class="navbar navbar-expand-md navbar-light fixed-top">
-    <a class="navbar-brand" href="~/default.cshtml"> <strong>Razor CPSC1517</strong> </a>
+    <a class="navbar-brand" href="~/Default.cshtml">
+        <strong>Razor CPSC1517</strong>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarMenuName" aria-controls="navbarMenuName"
             aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarMenuName">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="~/default.cshtml" style="color:black">Home</a>
+                <a class="nav-link" href="~/Default.cshtml"
+                   style="color:black">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="~/HelloWorld.cshtml">Hello World</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#"
-                   id="navbarSampleMenu" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Samples
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarSampleMenu">
-                    <a class="nav-link" href="~/SamplesPages/BasicForm.cshtml">Basic Form</a>
-                    <a class="nav-link" href="~/SamplesPages/RadioButtons.cshtml">RadioButtons</a>
-                    <a class="nav-link" href="~/SamplesPages/CheckBoxes.cshtml">CheckBoxes</a>
-                    <a class="nav-link" href="~/SamplesPages/DropdownList.cshtml">Dropdownlist</a>
+                   id="navbarSubMenu" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Samples</a>
+                <div class="dropdown-menu" aria-labelledby="navbarSubMenu">
+                    <a class="dropdown-item" href="~/SamplePages/BasicForm.cshtml">Basic Form</a>
+                    <a class="dropdown-item" href="~/SamplePages/RadioButtons.cshtml">RadioButtons</a>
+                    <a class="dropdown-item" href="~/SamplePages/CheckBoxes.cshtml">CheckBoxes</a>
+                    <a class="dropdown-item" href="~/SamplePages/DropdownList.cshtml">Dropdown List</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#"
                    id="navbarDBMenu" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    DB Samples
-                </a>
+                   aria-haspopup="true" aria-expanded="false">DB Samples</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDBMenu">
-                    <a class="nav-link" href="~/SamplesPages/SimpleQuery.cshtml">Simple PKey Query</a>
-                    <a class="nav-link" href="~/SamplesPages/MultiRecordQuery.cshtml">DDL Selection Query</a>
+                    <a class="dropdown-item" href="~/SamplePages/SimpleQuery.cshtml">Simple PKey Query</a>
+                    <a class="dropdown-item" href="~/SamplePages/MultiRecordQuery.cshtml">DropdownList Query</a>
+                    <a class="dropdown-item" href="~/SamplePages/CRUDPage.cshtml">CRUD - Insert</a>
                 </div>
             </li>
         </ul>
